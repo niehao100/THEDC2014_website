@@ -7,11 +7,12 @@
 本网站基于ruby on rails，数据库是postgres（似乎是从Gitlab改的），去年的Gemfile存在严重bug，已经修复。其runtime版本仍然可以在电子科协服务器上找到，去年的版本请访问[*这里*](http://git.oschina.net/stieizc/thedc-2013)。感谢各位学长的帮助。
 
 by 2014年电设平台组网站组Neil
+
 on 2014-12-29
 
 
         2013电设大赛主页
-        --从教程上搬了很多代码，感谢[Michael Hartl](http://michaelhartl.com/)的[*Ruby on Rails       Tutorial*](http://railstutorial.org/)，也感谢翻译君[Andor Chen]。
+        --从教程上搬了很多代码，感谢[Michael Hartl](http://michaelhartl.com/)的[*Ruby on Rails       Tutorial*](http://railstutorial.org/)，也感谢翻译[Andor Chen]。
 
     环境设置
     --
