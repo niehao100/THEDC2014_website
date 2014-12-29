@@ -1,0 +1,12 @@
+<table>
+  <tbody>
+    <% @event.duels.each do |duel| %>
+      <tr>
+	<td><%= link_to duel.a.name, admin_team_path(duel.a) %></td>
+	<td><%= link_to "胜出", a_win_admin_duel_path(duel), method: :put %></td>
+	<td><%= link_to duel.b.name, admin_team_path(duel.b) %></td>
+	<td><%= link_to "胜出", b_win_admin_duel_path(duel), method: :put%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,30 @@
+<h1>重置密码</h1>
+<div class="row">
+  <div class="large-4 large-centered columns">
+    <%= form_for(@user, url: password_reset_path(params[:id])) do |f| %>
+      <%= render 'shared/error_msg', object: f.object, name: "表格" %>
+      <div class="row collapse">
+	<div class="large-3 small-3 columns">
+	  <span class="attached-label">密码</span>
+	</div>
+	<div class="large-9 small-9 columns">
+	  <%= f.password_field :password, class: "attached-input" %>
+	</div>
+      </div>
+
+      <div class="row collapse">
+	<div class="large-3 small-3 columns">
+	  <span class="attached-label">密码确认</span>
+	</div>
+	<div class="large-9 small-9 columns">
+	  <%= f.password_field :password_confirmation, class: "attached-input" %>
+	</div>
+      </div>
+      <div class="row">
+	<div class="large-centered large-4 columns">
+	  <%= f.submit "确认", class: "button small", data: { disable_with: '正在处理' } %>
+	</div>
+      </div>
+    <% end %>
+  </div>
+</div>

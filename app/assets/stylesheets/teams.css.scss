@@ -1,0 +1,18 @@
+// Place all the styles related to the Teams controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+ul.teams>li  {
+    list-style: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $grayLighter;
+    &:last-child {
+	border:0;
+    }
+}
+
+.team_inf {
+    margin-top: 10px;
+    margin-left:15px;
+}

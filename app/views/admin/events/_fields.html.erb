@@ -1,0 +1,26 @@
+<div class="row collapse">
+  <div class="large-3 small-3 columns">
+    <span class="attached-label">名称</span>
+  </div>
+  <div class="large-9 small-9 columns">
+    <%= f.text_field :name, class: "attached-input" %>
+  </div>
+</div>
+
+<div class="row collapse">
+  <div class="large-3 small-3 columns">
+    <span class="attached-label">截止日期</span>
+  </div>
+  <div class="large-9 small-9 large-centered small-centered columns">
+    <%= f.date_select :due_date, class: "attached-input" %>
+  </div>
+</div>
+
+<div class="row collapse">
+  <div class="large-3 small-3 columns">
+    <span class="attached-label">描述</span>
+  </div>
+  <div class="large-9 small-9 large-centered small-centered columns">
+    <%= f.text_area :description, class: "attached-input" %>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<% provide(:title , '') %>
+<div class="index-image">
+  <%= image_tag("index.jpg", alt: "主页", class: "image") %>
+</div>
+<div class="index-image-text">
+	<p class="center"><span class="title">“TI杯”清华大学第十六届电子设计大赛</span></p>
+  <p class="center"><span class="slogan">这有四个坑……  </span></p>
+</div>
+<div class="signin-box">
+  <% if !signed_in? %>
+    <%= render "signin" %>
+  <% else %>
+    <%= render "recent_inf" %>
+  <% end %>
+</div>

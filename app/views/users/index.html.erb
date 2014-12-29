@@ -1,0 +1,54 @@
+<% provide(:title, '所有选手') %>
+<h1>所有选手</h1>
+
+<div class="row">
+  <div class="large-centered large-9 columns">
+      <div class="row">
+	<div class="large-3 columns">
+	  <% if signed_in? %>
+	    <%= link_to current_user.name, current_user, class: 'button small' %>
+	  <% else %>
+	    <%= link_to "加入/登录", root_path, class: 'button small' %>
+	  <% end %>
+	</div>
+	<div class="large-9 columns">
+	  <%= render 'shared/search_form', model: 'user', holder: '输入姓名或邮箱' %>
+	</div>
+      </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-centered large-10 columns">
+    <table class="users-table">
+      <thead>
+	<tr>
+	  <th class="name">姓名</th>
+	  <th class="email">邮箱</th>
+	  <th class="department">系别</th>
+	  <th class="from-class">班级</th>
+	  <th class="team">队伍</th>
+	</tr>
+      </thead>
+      <tbody>
+	<% @users.each do |user| %>
+	  <tr>
+	    <td class="name"><%= link_to user.name, user_path(user) %></td>
+	    <td class="email"><%= user.email %></td>
+	    <td class="department"><%= user.department %></td>
+	    <td class="from-class"><%= user.from_class %></td>
+	    <td class="team">
+	      <% team = user.team %>
+	      <% if team %>
+		<%= link_to team.name, team_path(team) %>
+	      <% end %>
+	    </td>
+	  </tr>
+	<% end %>
+      </tbody>
+    </table>
+  </div>
+  <% if @users %>
+    <%= paginate @users %>
+  <% end %>
+</div>

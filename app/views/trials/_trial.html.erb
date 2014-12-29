@@ -1,0 +1,5 @@
+<li>
+  <%= link_to trial.team.name, admin_team_path(trial.team) %>
+  开始时间<%= trial.start_time.to_formatted_s(:short_form) %>
+  结束时间<%= trial.end_time.to_formatted_s(:short_form) %>
+</li>

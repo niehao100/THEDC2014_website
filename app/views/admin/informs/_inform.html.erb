@@ -1,0 +1,5 @@
+<li>
+  <%= link_to inform.title, admin_inform_path(inform) %>
+  <%= link_to "edit", edit_admin_inform_path(inform) %>
+  <%= link_to "delete", admin_inform_path(inform), method: :delete, data: { confirm: "确认？", disable_with: '正在处理' } %>
+</li>

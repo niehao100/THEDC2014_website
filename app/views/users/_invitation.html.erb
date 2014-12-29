@@ -1,0 +1,5 @@
+<li>
+  <%= invitation.team.name %>
+  <%= link_to "接受", accept_invitation_path(invitation), method: :post %>
+  <%= link_to "拒绝", decline_invitation_path(invitation), method: :post %>
+</li>

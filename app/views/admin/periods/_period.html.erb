@@ -1,0 +1,12 @@
+<li>
+  开始时间<%= period.start_time.to_formatted_s(:short_form) %>
+  结束时间<%= period.end_time.to_formatted_s(:short_form) %>
+  总人数<%= period.total_number %>
+  当前人数<%= period.trials.count %>
+  <%= link_to "delete", admin_period_path(period), method: :delete, data: { confirm: "确认？", disable_with: '正在处理' } %>
+  <% if period.trials.any?%>
+    <ul>
+      <%= render period.trials.order(:start_time) %>
+    </ul>
+  <% end %>
+</li>

@@ -1,0 +1,5 @@
+<li>
+  <%= apply.user.name %>
+  <%= link_to "接受", accept_apply_path(apply), method: :post %>
+  <%= link_to "拒绝", decline_apply_path(apply), method: :post %>
+</li>

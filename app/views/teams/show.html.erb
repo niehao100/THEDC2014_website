@@ -1,0 +1,44 @@
+<% provide(:title, @team.name) %>
+<div class="row">
+  <aside class="large-3 columns">
+    <%= render 'teams/team_inf', team: @team %>
+    <% if signed_in? && @team.leader?(current_user) && @invitations.any? %>
+      <section>
+	<%= render 'team_invitations' %>
+      </section>
+    <% end %>
+    <% if signed_in? && @team.leader?(current_user) && @applies.any? %>
+      <section>
+	<%= render 'team_applies' %>
+      </section>
+    <% end %>
+  </aside>
+    <div class="large-9 columns">
+    <div class="section-container auto" data-section>
+      <section>
+	<p class="title" data-section-title><a href="#panel2">近期通知</a></p>
+	<div class="content" data-section-content>
+	  <% if @informs.any? %>
+	    <ul>
+	    <%= render @informs %>
+	    </ul>
+	  <% end %>
+	</div>
+      </section>
+      <section>
+	<p class="title center" data-section-title><a href="#panel1">近期比赛</a></p>
+	<div class="content" data-section-content>
+	  <%= render 'teams/team_duels', team: @team %>
+	</div>
+      </section>
+      <section>
+	<p class="title" data-section-title><a href="#panel2">近期成员发贴</a></p>
+	<div class="content" data-section-content>
+	  <% if @posts.any? %>
+	    <%= render 'posts/posts', posts: @posts %>
+	  <% end %>
+	</div>
+      </section>
+    </div>
+    </div>
+</div>

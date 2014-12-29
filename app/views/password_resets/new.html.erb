@@ -1,0 +1,13 @@
+<h1>重置密码</h1>
+<div class="row">
+  <div class="large-4 large-centered columns">
+    <%= form_for(:password_reset, url: password_resets_path) do |f| %>
+      <%= f.text_field :email, placeholder: "邮箱" %>
+      <div class="row">
+	<div class="large-centered large-4 columns">
+      <%= f.submit "确认", class: "button small", data: { disable_with: '正在处理' } %>
+	</div>
+      </div>
+    <% end %>
+  </div>
+</div>

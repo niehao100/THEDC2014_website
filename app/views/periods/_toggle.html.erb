@@ -1,0 +1,7 @@
+<% team = current_user.team %>
+<% if period.teams.include?(team) %>
+  <%= link_to "取消", period_remove_team_path(period.id, team.id), method: :post, data: { disable_with: '正在处理' }  %>
+<% elsif !@event.teams.include?(team) %>
+<!--  <%= link_to "加入", period_add_team_path(period.id, team.id), method: :post, data: { disable_with: '正在处理' }  %>
+--!>
+<% end %>

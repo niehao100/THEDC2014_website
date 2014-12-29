@@ -1,0 +1,35 @@
+<% provide(:title, '所有队伍') %>
+<h1>所有队伍</h1>
+<table class="teams-table">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th class="name">队名</th>
+      <th>组别</th>
+      <th>学校/院系</th>
+      <th>班级</th>
+      <th class="leader">队长</th>
+      <th>队长电话</th>
+      <th class="email">队长邮箱</th>
+      <th>人数</th>
+      <th>存活</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @teams.each do |team| %>
+      <% leader = team.leader %>
+      <tr>
+	<td><%= team.id %></td>
+	<td class="name"><%= link_to team.name, admin_team_path(team) %></td>
+	<td><%= team.group %></td>
+	<td><%= leader.department %></td>
+	<td><%= leader.from_class %></td>
+	<td class="leader"><%= leader.name %></td>
+	<td><%= leader.phone_num %></td>
+	<td class="email"><%= leader.email %></td>
+	<td><%= team.members.count %></td>
+	<td><%= team.survived %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

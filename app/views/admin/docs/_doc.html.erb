@@ -1,0 +1,6 @@
+<li>
+  <%= link_to doc.title, admin_doc_path(doc) %>
+  <%= link_to "edit", admin_doc_path(doc) %>
+  <%= link_to "delete", admin_doc_path(doc), method: :delete, data: { confirm: "确认？", disable_with: '正在处理' } %>
+  <p><%= doc.description %></p>
+</li>

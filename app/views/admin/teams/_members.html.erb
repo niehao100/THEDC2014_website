@@ -1,0 +1,17 @@
+<% leader = team.leader %>
+<li>队长：</li>
+<li>
+  <%= link_to leader.name, leader %>
+</li>
+<li>队员：</li>
+<% team.members.each do |member| %>
+  <% if !member.leader?%>
+    <li>
+      <%= link_to member.name, member %>
+      <% if edit_page && current_user.leader? && !current_user?(member)%>
+	| <%= link_to "开除", team.memberships.find_by(user_id: member), method: :delete, data: { confirm: "确认？", disable_with: '正在处理' }  %>
+      <% end %>
+    </li>
+  <% end %>
+<% end %>
+

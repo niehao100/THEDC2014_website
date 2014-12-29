@@ -1,0 +1,27 @@
+<li>
+  <div class="row">
+    <div class="large-6 columns">
+      <div class="row">
+	<h2><%= link_to team.name, team %></h2>
+      </div>
+      <div class="row center">
+	<%= render 'teams/survived', team: team %>
+      </div>
+      <div class="row">
+	<div class="large-centered columns center">
+	  <%= render 'teams/manager', team: team %>
+	  <% if signed_in? && team.can_recircuit? && current_user.can_be_recircuit? %>
+	    <%= link_to "申请加入队伍", apply_team_path(team.id), method: :post, data: { disable_with: '正在处理' } %>
+	  <% end %>
+	</div>
+      </div>
+    </div>
+    <div class="large-6 columns">
+      <span>
+	<ul class="users">
+	  <%= render 'teams/members', team: team, edit_page: false %>
+	</ul>
+      </span>
+    </div>
+  </div>
+</li>

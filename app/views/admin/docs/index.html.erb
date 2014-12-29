@@ -1,0 +1,19 @@
+<% provide(:title , '文档') %>
+<h1>文档</h1>
+
+<div class="row">
+  <div class="large-centered large-8 columns">
+    <%= link_to "新建", new_admin_doc_path, class: 'button small' %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-centered large-8 columns">
+    <ul>
+      <%= render @docs %>
+    </ul>
+  </div>
+  <% if @docs%>
+    <%= paginate @docs %>
+  <% end %>
+</div>

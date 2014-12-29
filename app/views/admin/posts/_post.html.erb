@@ -1,0 +1,23 @@
+<li>
+  <div class="row">
+    <aside class="large-3 columns">
+      <section class="owner">
+	<%= link_to post.user.name, admin_user_path(post.user) %>
+      </section>
+      <section>
+	<%= post.created_at.strftime("%Y年%m月%d日 %T") %>
+	<br />
+	<%= post.replies.count %> <%= link_to "回复", admin_post_path(post)+"#reply" %>
+	<%= link_to "删除", admin_post_path(post), method: :delete, data: { confirm: "确认？", disable_with: '正在处理' }  %>
+      </section>
+    </aside> 
+    <div class="large-9 columns content">
+      <section class="center post_title">
+	<%= link_to_unless_current post.title, admin_post_path(post) %>
+      </section>
+      <section>
+	<%= simple_format(post.content, style: "text-indent:50px;") %>
+      </section>
+    </div> 
+  </div>
+</li>

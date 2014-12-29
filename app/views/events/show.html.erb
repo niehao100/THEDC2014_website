@@ -1,0 +1,11 @@
+<% provide(:title, @event.name) %>
+<h1>
+  <%= @event.name %>
+</h1>
+<div class="row">
+  <div class="large-centered large-10 columns">
+    <ol class="periods">
+      <%= render @periods %>
+    </ol>
+  </div>
+</div>

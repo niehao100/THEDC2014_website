@@ -1,0 +1,17 @@
+// Place all the styles related to the Informs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.index-informs {
+    color: white; 
+    a {
+	color: white; 
+	&:hover {
+	    color: $grayLighter;
+	}
+    }
+    background: rgb(0, 0, 0); /* fallback color */
+    background: rgba(0, 0, 0, 0.7);
+    padding-left: 25px;
+    margin-top: 25px;
+}

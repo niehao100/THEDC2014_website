@@ -1,0 +1,30 @@
+<% provide(:title, '所有队伍') %>
+<h1>所有队伍</h1>
+
+<div class="row">
+  <div class="large-centered large-10 columns">
+      <div class="row">
+	<div class="large-2 columns">
+	  <% if !signed_in? || !current_user.has_team? %>
+	    <%= link_to "创建队伍", new_team_path, class: 'button small' %>
+	  <% else %>
+	    <%= link_to "我的队伍", current_user.team, class: 'button small' %>
+	  <% end %>
+	</div>
+	<div class="large-10 columns">
+	  <%= render 'shared/search_form', model: 'team', holder: '输入队名或队员名' %>
+	</div>
+      </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-centered large-8 columns">
+    <ul class="teams">
+      <%= render @teams %>
+    </ul>
+  </div>
+  <% if @teams%>
+    <%= paginate @teams %>
+  <% end %>
+</div>

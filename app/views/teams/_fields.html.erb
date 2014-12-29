@@ -1,0 +1,17 @@
+<div class="row collapse">
+  <div class="large-3 small-3 columns">
+    <span class="attached-label">队名</span>
+  </div>
+  <div class="large-9 small-9 columns">
+    <%= f.text_field :name, class: "attached-input" %>
+  </div>
+</div>
+
+<div class="row collapse">
+  <div class="large-3 small-3 columns">
+    <span class="attached-label">组别</span>
+  </div>
+  <div class="large-9 small-9 columns">
+    <%= f.select(:group, ["DSP组","单片机组","FPGA组"], {}, class: "attached-input") %>
+  </div>
+</div>

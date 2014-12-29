@@ -1,0 +1,2 @@
+module Admin::DuelsHelper
+end

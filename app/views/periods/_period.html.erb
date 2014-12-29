@@ -1,0 +1,14 @@
+<li>
+  <span>开始时间：</span><%= period.start_time.to_formatted_s(:short_form) %>
+  <span>结束时间：</span><%= period.end_time.to_formatted_s(:short_form) %>
+  <span>总人数：</span><%= period.total_number %>
+  <span>当前人数：</span><%= period.trials.count %>
+  <% if signed_in? && current_user.leader? && current_user.team.survived? && !period.event.is_end %>
+    <span><%= render 'periods/toggle', period: period %></span>
+  <% end %>
+  <% if period.teams.include?(current_user.team)%>
+    <ul>
+      <%= render 'trials/trial', trial: period.trials.find_by(team_id: current_user.team.id) %>
+    </ul>
+  <% end %>
+</li>

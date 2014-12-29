@@ -1,0 +1,24 @@
+<% provide(:title, "修改个人信息") %>
+<h1>修改你的个人资料</h1>
+
+<div class="row">
+  <div class="large-8 large-centered columns">
+    <%= form_for(@user) do |f| %>
+	<%= render 'shared/error_msg', object: f.object, name: "表格" %>
+	<div class="row collapse">
+	  <div class="large-3 small-3 columns">
+	    <span class="attached-label">旧密码</span>
+	  </div>
+	  <div class="large-9 small-9 columns">
+	    <%= f.password_field :oldpassword, class: "attached-input" %>
+	  </div>
+	</div>
+	<%= render 'fields', f: f %>
+	<div class="row">
+	  <div class="small-3 large-3 large-offset-4 columns">
+	    <%= f.submit "提交修改", class: "button", data: { disable_with: '正在处理' } %>
+	  </div>
+	</div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<li>
+  <%= link_to trial.team.name, admin_team_path(trial.team) %>
+  开始时间<%= trial.start_time %>
+  结束时间<%= trial.end_time %>
+  <%= link_to trial.passed.to_s, admin_revert_trial_path(trial), method: :patch, data: { disable_with: '正在处理' } %>
+  <%= link_to "delete", admin_trial_path(trial), method: :delete, data: { confirm: "确认？", disable_with: '正在处理' } %>
+</li>

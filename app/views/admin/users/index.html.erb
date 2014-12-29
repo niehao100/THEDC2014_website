@@ -1,0 +1,57 @@
+<% provide(:title, '所有选手') %>
+<h1>所有选手</h1>
+
+<div class="row">
+  <div class="large-centered large-9 columns">
+    <div class="row">
+      <div class="large-3 columns">
+	<%= link_to "新建", new_admin_user_path, class: 'button small' %>
+      </div>
+      <div class="large-9 columns">
+	<%= render 'admin/shared/search_form', model: 'user', holder: '输入姓名或邮箱' %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<table class="teams-table">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th class="name">姓名</th>
+      <th class="email">邮箱</th>
+      <th>电话</th>
+      <th class="department">系别</th>
+      <th class="team">队伍</th>
+      <th>管理员</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+	<td><%= user.id %></td>
+	<td class="name"><%= link_to user.name, admin_user_path(user) %></td>
+	<td class="email"><%= user.email %></td>
+	<td><%= user.phone_num %></td>
+	<td class="department"><%= user.department %></td>
+	<td>
+	  <% team = user.team %>
+	  <% if team %>
+	    <%= link_to team.name, admin_team_path(team) %>
+	  <% end %>
+	</td>
+	<td><%= user.admin %></td>
+	<td>
+	  <%= link_to "edit", admin_user_path(user) %>
+	  <%= link_to "delete", admin_user_path(user), method: :delete, data: { confirm: "确认？", disable_with: '正在处理' } %>
+	</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% if @users %>
+  <%= paginate @users %>
+<% end %>
+</div>

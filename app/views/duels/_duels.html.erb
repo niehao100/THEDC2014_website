@@ -1,0 +1,16 @@
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% duels.each do |duel| %>
+      <tr>
+	<td <%= duel_a_bg(duel) %>><%= link_to duel.a.name, duel.a %></td>
+	<td <%= duel_b_bg(duel) %>><%= link_to duel.b.name, duel.b %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

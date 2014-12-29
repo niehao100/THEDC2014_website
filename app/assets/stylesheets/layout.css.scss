@@ -1,0 +1,217 @@
+/* mixins, variables, etc. */
+
+$gray: #555;
+$grayLight: #999;
+$grayLighter: #eee;
+$grayDarker: #222;
+$grayMediumLight: #eaeaea;
+
+/* universal */
+
+html {
+    overflow-y: scroll;
+}
+
+body {
+    //margin-top: 30px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.center {
+    text-align: center;
+    h1 {
+	margin-bottom: 10px;
+    }
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1;
+}
+
+h1 {
+    font-size: 3em;
+    letter-spacing: -2px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.2em;
+    letter-spacing: -1px;
+    text-align: center;
+    font-weight: normal;
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.7em;
+}
+
+/* header */
+
+#logo-slot {
+    width: 130px;
+    display: inline-block;
+    //font-size: 1.3em;
+    //background: rgba(255, 255, 255, 1);
+    //color: rgba(255, 255, 255, 1);
+}
+
+#logo {
+    background-image: url(image_path('logo.png'));
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    content: "";
+    height: 145px;
+    width: 190px;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+/* footer */
+
+footer {
+    //margin-top: 45px;
+    padding-top: 5px;
+    border-top: 1px solid $grayMediumLight;
+    color: $gray;
+
+    a {
+	color: $gray;
+	&:hover {
+	    color: $grayDarker;
+	}
+    }
+
+    ul {
+	float: left;
+	list-style: none;
+	li {
+	    float: left;
+	    margin-left: 10px;
+	}
+    }
+}
+
+/* index */
+
+.index-image {
+    postition:relative;
+    width: 100%;
+}
+
+img {
+    &.image {
+	display: block;
+	//margin-bottom: 50px;
+	margin-left: auto; 
+	margin-right: auto; 
+    }
+}
+
+.index-image-text {
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    p {
+	margin: 30px;
+    }
+    span {
+	&.title{
+	    font-size: 2em;
+	    color: white; 
+	    background: rgb(0, 0, 0); /* fallback color */
+	    background: rgba(0, 0, 0, 0.7);
+	    padding: 10px; 
+	}
+	&.slogan{
+	    font-size: 1.2em;
+        color:white;
+	    padding: 10px; 
+	}
+    }
+}
+
+.signin-box {
+    position: absolute;
+    top: 400px;
+    width: 100%;
+}
+
+/* miscellaneous */
+
+.debug_dump {
+    clear: both;
+    float: left;
+    width: 100%;
+    margin-top: 45px;
+}
+
+/* forms */
+
+input, textarea, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.attached-label {
+    @include prefix-postfix-base;
+    $bg: $input-prefix-bg;
+    $is-button: false;
+    @include prefix($bg, $is-button);
+}
+
+#error_explanation {
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .control-group;
+  @extend .error;
+}
+
+/* sidebar */
+
+aside, .content {
+    section {
+	padding: 10px 0;
+	&:first-child {
+	    padding: 4px 0;
+	}
+	span {
+	    display: block;
+	    margin-bottom: 3px;
+	    line-height: 1;
+	}
+	h1 {
+	    font-size: 1.4em;
+	    text-align: left;
+	    letter-spacing: -1px;
+	    margin-bottom: 3px;
+	    margin-top: 0px;
+	}
+    }
+}
+
+/* tables */
+table {
+    margin: 10px auto;
+}
+
+textarea {
+    height: 150px;
+}

@@ -1,0 +1,23 @@
+<% provide(:title, '贴吧') %>
+<h1>贴吧</h1>
+
+<div class="row">
+  <div class="large-centered large-10 columns">
+    <div class="row">
+      <div class="large-2 columns">
+	<%= link_to "发贴", new_post_path, class: 'button small' %>
+      </div>
+      <div class="large-10 columns">
+	<%= render 'shared/search_form', model: 'post', holder: '输入关键词' %>
+      </div>
+    </div>
+
+    <ul class="posts">
+      <%= render @posts %>
+    </ul>
+
+    <% if @posts %>
+      <%= paginate @posts %>
+    <% end %>
+  </div>
+</div>

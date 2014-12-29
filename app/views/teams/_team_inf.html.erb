@@ -1,0 +1,10 @@
+<section>
+  <h1><%= link_to team.name, team %></h1>
+  <%= render 'teams/survived', team: team %>
+  <%= render 'teams/manager', team: team %>
+</section>
+<section>
+  <ul class="users">
+    <%= render 'teams/members', team: team, edit_page: false %>
+  </ul>
+</section>

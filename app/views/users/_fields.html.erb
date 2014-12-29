@@ -1,0 +1,88 @@
+<div class="row collapse">
+  <div class="large-3 small-3 columns">
+    <span class="attached-label">姓名</span>
+  </div>
+  <div class="large-9 small-9 columns">
+    <%= f.text_field :name, class: "attached-input" %>
+  </div>
+</div>
+
+<div class="row collapse">
+  <div class="large-3 small-3 columns">
+    <span class="attached-label">学号</span>
+  </div>
+  <div class="large-9 small-9 columns">
+    <%= f.text_field :id_num, class: "attached-input" %>
+  </div>
+</div>
+
+<div class="row collapse">
+  <div class="large-3 small-3 columns">
+    <span class="attached-label">邮箱</span>
+  </div>
+  <div class="large-9 small-9 columns">
+    <%= f.text_field :email, class: "attached-input" %>
+  </div>
+</div>
+
+<div class="row collapse">
+  <div class="large-3 small-3 columns">
+    <span class="attached-label">电话</span>
+  </div>
+  <div class="large-9 small-9 columns">
+    <%= f.text_field :phone_num, class: "attached-input" %>
+  </div>
+</div>
+
+<div class="row collapse">
+  <div class="large-3 small-3 columns">
+    <span class="attached-label">密码</span>
+  </div>
+  <div class="large-9 small-9 columns">
+    <%= f.password_field :password, class: "attached-input" %>
+  </div>
+</div>
+
+<div class="row collapse">
+  <div class="large-3 small-3 columns">
+    <span class="attached-label">密码确认</span>
+  </div>
+  <div class="large-9 small-9 columns">
+    <%= f.password_field :password_confirmation, class: "attached-input" %>
+  </div>
+</div>
+
+<div class="row collapse">
+  <div class="large-1 large-offset-4 columns">
+    <%= f.label :gender do %>
+      <%= f.radio_button :gender, "男", checked: true  %>
+      <span class="custom radio">男</span>
+    <% end %>
+  </div>
+</div>
+<div class="row collapse">
+  <div class="large-1 large-offset-4 columns">
+    <%= f.label :gender do %>
+      <%= f.radio_button :gender, "女" %>
+      <span class="custom radio">女</span>
+    <% end %>
+  </div>
+</div>
+
+<div class="row collapse">
+  <div class="large-3 small-3 columns">
+    <span class="attached-label">班级</span>
+  </div>
+  <div class="large-9 small-9 columns">
+    <%= f.text_field :from_class, class: "attached-input" %>
+  </div>
+</div>
+
+<div class="row collapse">
+  <div class="large-3 small-3 columns">
+    <span class="attached-label">系别</span>
+  </div>
+  <div class="large-9 small-9 columns">
+    <%= f.text_field :department, class: "attached-input" %>
+  </div>
+</div>

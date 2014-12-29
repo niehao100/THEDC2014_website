@@ -1,0 +1,13 @@
+<% provide(:title, '全部赛事') %>
+<h1>全部赛事</h1>
+
+<div class="row">
+  <div class="large-centered large-8 columns">
+    <ul class="events">
+      <%= render @events %>
+    </ul>
+  </div>
+  <% if !@events.blank?%>
+    <%= paginate @events %>
+  <% end %>
+</div>

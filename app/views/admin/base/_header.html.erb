@@ -1,0 +1,54 @@
+<header>
+  <div class="fixed" id="logo"></div>
+  <div class="fixed">
+    <nav class="top-bar">
+      <ul class="title-area">
+	<li id="logo-slot"></li>
+	<li class="toggle-topbar menu-icon">
+	  <a href="#"><span>菜单</span></a>
+	</li>
+      </ul>
+      <section class="top-bar-section">
+	<ul class="left">
+	  <li class="divider"></li>
+	  <li><%= link_to "主页", admin_root_path %></li>
+	  <li class="divider"></li>
+	  <li><%= link_to "选手", admin_users_path %></li>
+	  <li class="divider"></li>
+	  <li><%= link_to "队伍", admin_teams_path %></li>
+	  <li class="divider"></li>
+	  <li><%= link_to "文档", admin_docs_path %></li>
+	  <li class="divider"></li>
+	  <li><%= link_to "赛事", admin_events_path %></li>
+	  <li class="divider"></li>
+	  <li><%= link_to "贴吧", admin_posts_path %></li>
+	  <li class="divider"></li>
+	  <li><%= link_to "通知", admin_informs_path %></li>
+	</ul>
+
+	<ul class="right">
+	  <% if signed_in? %>
+	    <li class="has-dropdown">
+	      <%= link_to current_user.name, current_user %>
+	      <ul class="dropdown">
+		<li><%= link_to "个人页面", current_user %></li>
+		<li><%= link_to "队伍页面", current_user.team %></li>
+		<li><%= link_to "修改个人信息", edit_user_path(current_user)%></li>
+		<li class="divider"></li>
+		<li><%= link_to "退出管理员", root_path %></li>
+		<li class="divider"></li>
+		<li>
+		  <%= link_to "登出", signout_path, method: "delete" %>
+		</li>
+	      </ul>
+	    </li>
+	  <% else %>
+	    <li>
+	      <%= link_to "登入", root_path %>
+	    </li>
+	  <% end %>
+	</ul>
+      </section>
+    </nav>
+  </div>
+</header>

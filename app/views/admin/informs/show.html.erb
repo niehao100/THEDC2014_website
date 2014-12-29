@@ -1,0 +1,7 @@
+<% provide(:title, '公告') %>
+<div class="row">
+  <div class="large-centered large-8 columns">
+    <h1><%= @inform.title %></h1>
+    <p><%= @inform.content.gsub(/\n/, '<br/>').html_safe %></p>
+  </div>
+</div>

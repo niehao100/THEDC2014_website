@@ -1,0 +1,53 @@
+<% provide(:title, '所有队伍') %>
+<h1>所有队伍</h1>
+
+<div class="row">
+  <div class="large-2 columns">
+    <%= link_to '打印', admin_print_teams_path, class: "button small" %>
+  </div>
+  <div class="large-2 columns">
+    <%= link_to '打印存活', admin_print_teams_survived_path, class: "button small" %>
+  </div>
+  <div class="large-2 columns">
+    <%= link_to '新建', new_team_path, class: "button small" %>
+  </div>
+  <div class="large-6 columns">
+    <%= render 'admin/shared/search_form', model: 'team', holder: '输入队名或队员名' %>
+  </div>
+</div>
+
+<table class="teams-table">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th class="name">队名</th>
+      <th>组别</th>
+      <th class="leader">队长</th>
+      <th>队长电话</th>
+      <th class="email">队长邮箱</th>
+      <th>存活</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @teams.each do |team| %>
+      <tr>
+	<td><%= team.id %></td>
+	<td class="name"><%= link_to team.name, admin_team_path(team) %></td>
+	<td><%= team.group %></td>
+	<td class="leader"><%= team.leader.name %></td>
+	<td><%= team.leader.phone_num %></td>
+	<td class="email"><%= team.leader.email %></td>
+	<td><%= team.survived %></td>
+	<td>
+	  <%= link_to "edit", admin_team_path(team) %>
+	  <%= link_to "delete", admin_team_path(team), method: :delete, data: { confirm: "确认？", disable_with: '正在处理' } %>
+	</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% if @teams%>
+  <%= paginate @teams %>
+<% end %>

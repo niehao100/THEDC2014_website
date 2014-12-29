@@ -1,0 +1,5 @@
+<li>
+  <%= link_to event.name, admin_event_path(event) %>
+  <%= link_to "edit", admin_event_path(event) %>
+  <%= link_to "delete", admin_event_path(event), method: :delete, data: { confirm: "确认？", disable_with: '正在处理' } %>
+</li>

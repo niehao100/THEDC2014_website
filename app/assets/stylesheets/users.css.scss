@@ -1,0 +1,42 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* user list */
+.users {
+    list-style: none;
+    li {
+	overflow: auto;
+    }
+    aside {
+	border-right: 1px solid $grayLighter;
+	section {
+	    border-top: 1px solid $grayLighter;
+	    &:first-child {
+		border: 0;
+		padding-top: 0;
+	    }
+	}
+    }
+}
+
+.users-table {
+    table-layout: fixed;
+    th, td {
+	&.name {
+	    width: 100px;
+	}
+	&.email {
+	    width: 230px;
+	}
+	&.department {
+	    width: 90px;
+	}
+	&.from-class {
+	    width: 70px;
+	}
+	&.team {
+	    width: 170px;
+	}
+    }
+}

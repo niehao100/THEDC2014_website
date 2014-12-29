@@ -1,0 +1,46 @@
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="large-3 columns">
+    <section>
+      <%= render 'user_inf', user: @user %>
+    </section>
+    <section>
+      <%= render 'user_team', user: @user %>
+    </section>
+    <% if current_user?(@user) && @applies.any? %>
+      <section>
+	<%= render 'user_applies' %>
+      </section>
+    <% end %>
+  </aside>
+  <div class="large-9 columns">
+    <div class="section-container auto" data-section>
+      <section>
+	<p class="title" data-section-title><a href="#panel2">近期通知</a></p>
+	<div class="content" data-section-content>
+	  <% if @informs.any? %>
+	    <ul>
+	      <%= render @informs %>
+	    </ul>
+	  <% end %>
+	</div>
+      </section>
+      <section>
+	<p class="title center" data-section-title><a href="#panel1">近期比赛</a></p>
+	<div class="content" data-section-content>
+	  <% if @user.has_team?%>
+	    <%= render 'teams/team_duels', team: @user.team %>
+	  <% end %>
+	</div>
+      </section>
+      <section>
+	<p class="title" data-section-title><a href="#panel2">近期发贴</a></p>
+	<div class="content" data-section-content>
+	  <% if @posts.any? %>
+	    <%= render 'posts/posts', posts: @posts %>
+	  <% end %>
+	</div>
+      </section>
+    </div>
+  </div>
+</div>

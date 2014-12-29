@@ -1,0 +1,10 @@
+<%= form_tag "/admin/#{model}s", method: :get do %>
+  <div class="row collapse">
+    <div class="large-11 columns">
+      <%= text_field_tag :search, nil, placeholder: holder %>
+    </div>
+    <div class="large-1 columns">
+      <%= submit_tag "搜索", name: nil, class: "postfix button radius"%>
+    </div>
+  </div>
+<% end %>

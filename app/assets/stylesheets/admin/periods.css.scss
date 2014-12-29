@@ -1,0 +1,27 @@
+// Place all the styles related to the admin/periods controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.datetime_select {
+    select {
+	background: transparent;
+	padding: 5px;
+	border: 0;
+	border-radius: 0;
+	&:nth-child(1) {
+	    width: 70px;
+	}
+	&:nth-child(2) {
+	    width: 80px;
+	}
+	&:nth-child(3) {
+	    width: 50px;
+	}
+	&:nth-child(4) {
+	    width: 50px;
+	}
+	&:nth-child(5) {
+	    width: 50px;
+	}
+    }
+}

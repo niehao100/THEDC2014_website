@@ -1,0 +1,36 @@
+<% provide(:title, "管理团队信息") %>
+<h1><%= @team.name %></h1>
+
+<div class="row">
+  <div class="large-8 large-centered columns">
+    <%= form_for([:admin, @team]) do |f| %>
+      <%= render 'shared/error_msg', object: f.object, name: "表格" %>
+      <%= render 'fields', f: f %>
+
+      <div class="row collapse">
+	<div class="large-3 small-3 columns">
+	  <span class="attached-label">组长</span>
+	</div>
+	<div class="large-9 small-9 columns">
+	  <%= f.select :leader_id, @team.members.all.collect {|p| [ p.name, p.id ] },  {}, class: "attached-input" %>
+	</div>
+      </div>
+
+      <div class="row" style="margin-top:10px;">
+	<div class="small-3 large-3 large-offset-3 small-offset-3 columns">
+	  <%= f.submit "提交修改", class: "button" %>
+	</div>
+	<div class="small-6 large-6 columns" style="margin-top:20px;">
+	  <%= link_to "解散队伍", team_path(@team), method: :delete, data: { confirm: "确认？", disable_with: '正在处理' } %>
+	</div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="row">
+  <div class="large-3 large-centered columns">
+    <ul class="users">
+      <%= render 'members', team: @team, edit_page: true %>
+    </ul>
+  </div>
+</div>

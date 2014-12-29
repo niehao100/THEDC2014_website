@@ -1,0 +1,14 @@
+td {
+    &.winner {
+	background-color: #00bfff;
+	a {
+	    color: #fff;
+	}
+    }
+
+    &.loser {
+	a {
+	    color: #dddddd;
+	}
+    }
+}

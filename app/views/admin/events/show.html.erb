@@ -1,0 +1,45 @@
+<% provide(:title, @event.name) %>
+<h1>
+  <%= @event.name %>
+</h1>
+<div class="row">
+  <div class="small-2 large-2 columns">
+    <%= link_to "打印", admin_print_event_path(@event), class: "button small radius" %>
+  </div>
+</div>
+<%= form_for([:admin, @period]) do |f| %>
+  <div class="row">
+    <div class="small-12 large-12 columns">
+      <%= f.hidden_field :event_id %>
+      <%= render 'admin/periods/fields', f: f %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-offset-2 small-offset-2 small-2 large-2 columns">
+      <p>总人数</p>
+    </div>
+    <div class="small-1 large-1 columns">
+      <%= f.text_field :total_number %>
+    </div>
+    <div class="pull-4 small-3 large-3 columns">
+      <%= f.submit "创建时间段", class: "button small", data: { disable_with: '正在处理' } %>
+    </div>
+  </div>
+</div>
+<% end %>
+<% if @periods.any? %>
+  <div class="row">
+    <div class="large-centered large-10 columns">
+      <ul class="periods">
+	<%= render @periods %>
+      </ul>
+    </div>
+  </div>
+<% end %>
+<% if @duels.any? %>
+  <div class="row">
+    <div class="large-centered large-10 columns">
+      <%= render 'duels/duels', duels: @duels %>
+    </div>
+  </div>
+<% end %>

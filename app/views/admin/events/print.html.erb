@@ -1,0 +1,28 @@
+<% provide(:title, '所有测试') %>
+<h1>所有测试</h1>
+<table class="teams-table">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>时间</th>
+      <th class="name">队名</th>
+      <th>组别</th>
+      <th class="leader">队长</th>
+      <th class="result">成绩</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @trials.each do |trial| %>
+      <% team = trial.team %>
+      <% leader = team.leader %>
+      <tr>
+	<td><%= team.id %></td>
+	<td><%= trial.start_time.to_formatted_s(:short_form) %></td>
+	<td class="name"><%= link_to team.name, admin_team_path(team) %></td>
+	<td><%= team.group %></td>
+	<td class="leader"><%= leader.name %></td>
+	<td class="result"></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

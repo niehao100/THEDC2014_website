@@ -1,0 +1,12 @@
+<% provide(:title, "删除账户") %>
+<h1>删除账户</h1>
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@user, method: :delete) do |f| %>
+      <%= render 'shared/error_msg', object: f.object, name: "表格" %>
+      <%= f.label :current_password, "旧密码" %>
+      <%= f.password_field :current_password %>
+      <%= f.submit "确认", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

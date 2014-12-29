@@ -1,0 +1,21 @@
+// Place all the styles related to the admin/teams controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.teams-table {
+    table-layout: fixed;
+    th, td {
+	&.name {
+	    width: 200px;
+	}
+	&.leader {
+	    width: 90px;
+	}
+	&.email {
+	    width: 230px;
+	}
+	&.result {
+	    width: 50px;
+	}
+    }
+}

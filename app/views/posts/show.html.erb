@@ -1,0 +1,22 @@
+<% provide(:title, @post.title) %>
+<div class="row">
+  <div class="large-10 large-centered columns">
+    <section>
+      <ul class="posts">
+	<%= render 'posts/post', post: @post %>
+      </ul>
+    </section>
+    <br />
+    <section>
+      <h2 style="text-align:left;padding-left:20px;">回贴</h2>
+      <ul class="replies">
+	<%= render @post.replies %>
+      </ul>
+    </section>
+    <% if signed_in?%>
+      <section id="reply" class="reply_form">
+	<%= render 'replies/add_reply' %>
+      </section>
+    <% end %>
+  </div>
+</div>

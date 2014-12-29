@@ -1,0 +1,8 @@
+<% if signed_in? && team.leader?(current_user) %>
+  <div class="large-centered columns" style="margin-top:6px;">
+    <%= link_to "管理队伍", edit_team_path(team) %>
+    <% if  team.can_recircuit? %>
+      <%= link_to "添加队员", users_path %>
+    <% end %>
+  </div>
+<% end %>

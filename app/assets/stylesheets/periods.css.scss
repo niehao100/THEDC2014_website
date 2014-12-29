@@ -1,0 +1,14 @@
+// Place all the styles related to the periods controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.periods {
+    margin: 10px;
+    list-style-type: armenian;
+    li {
+	span {
+	    margin: 0 10px;
+	    letter-spacing: 1px;
+	}
+    }
+}

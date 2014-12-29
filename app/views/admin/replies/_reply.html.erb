@@ -1,0 +1,16 @@
+<li>
+  <div class="row">
+    <aside class="large-3 columns">
+      <section class="owner">
+	<%= link_to reply.user.name, admin_user_path(reply.user) %>
+      </section>
+      <section>
+	<%= reply.created_at.strftime("%Y年%m月%d日 %T") %>
+	<%= link_to "删除", admin_reply_path(reply), method: :delete, data: { confirm: "确认？", disable_with: '正在处理' }  %>
+      </section>
+    </aside> 
+    <div class="large-9 columns">
+      <%= simple_format(reply.content, style: "text-indent:50px;") %>
+    </div> 
+  </div>
+</li>

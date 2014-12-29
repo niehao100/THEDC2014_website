@@ -1,0 +1,36 @@
+<% provide(:title, @user.name) %>
+<div class="row">
+
+  <div class="small-8 large-8 large-centered columns">
+    <%= form_for([:admin, @user]) do |f| %>
+      <%= render 'shared/error_msg', object: f.object, name: "表格" %>
+      <%= render 'fields', f: f %>
+      <div class="row">
+	<div class="small-3 large-3 large-offset-4 columns">
+	  <%= f.submit "提交修改", class: "button", data: { disable_with: '正在处理' } %>
+	</div>
+      </div>
+    <% end %>
+    <section>
+      <%= render 'user_team', user: @user %>
+    </section>
+    <% if current_user?(@user) && @invitations.any? %>
+      <section>
+	<%= render 'user_invitations' %>
+      </section>
+    <% end %>
+    <% if current_user?(@user) && @applies.any? %>
+      <section>
+	<%= render 'user_applies' %>
+      </section>
+    <% end %>
+    <section>
+      <p><a href="#panel2">近期发贴</a></p>
+      <div class="content" data-section-content>
+	<% if @posts.any? %>
+	  <%= render 'posts/posts', posts: @posts %>
+	<% end %>
+      </div>
+    </section>
+  </div>
+</div>

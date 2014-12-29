@@ -1,0 +1,9 @@
+<ul class="duels">
+  <% if team.duels.any? %>
+    <% team.duels.includes(:event).order('"events"."show_time"').references(:show_time).each do |duel| %>
+      <li>
+	<%= link_to duel.event.name %> <%= link_to duel.rival(team).name, duel.rival(team) %> <%= duel.event.show_time.strftime("%Y年%m月%d日 %T") %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>

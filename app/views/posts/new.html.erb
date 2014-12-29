@@ -1,0 +1,15 @@
+<% provide(:title, '新建帖子') %>
+<h1>新建帖子</h1>
+<div class="row">
+  <div class="large-6 large-centered columns">
+    <%= form_for(@post) do |f| %>
+      <%= render 'shared/error_msg', object: f.object, name: "表格" %>
+      <%= render 'fields', f: f %>
+      <div class="row">
+	<div class="small-3 large-3 large-offset-4 columns">
+	  <%= f.submit "发贴", data: { disable_with: '正在处理' } %>
+    <% end %>
+    </div>
+    </div>
+  </div>
+</div>

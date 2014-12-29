@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="large-6 small-6 columns">
+    <div class="row collapse">
+      <div class="large-2 small-2 columns">
+	<span class="attached-label">开始时间</span>
+      </div>
+      <div class="large-10 small-10 columns datetime_select">
+	<%= f.datetime_select :start_time %>
+      </div>
+    </div>
+  </div>
+  <div class="large-6 small-6 columns">
+    <div class="large-2 small-2 columns">
+      <span class="attached-label">结束时间</span>
+    </div>
+    <div class="large-10 small-10 columns datetime_select">
+      <%= f.datetime_select :end_time %>
+    </div>
+  </div>
+</div>
