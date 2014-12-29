@@ -10,11 +10,8 @@ by 2014年电设平台组网站组Neil
 on 2014-12-29
 
 
-
-
-2013电设大赛主页
-    --
-    从教程上搬了很多代码，感谢[Michael Hartl](http://michaelhartl.com/)的[*Ruby on Rails       Tutorial*](http://railstutorial.org/)，也感谢翻译君[Andor Chen]。
+        2013电设大赛主页
+        --从教程上搬了很多代码，感谢[Michael Hartl](http://michaelhartl.com/)的[*Ruby on Rails       Tutorial*](http://railstutorial.org/)，也感谢翻译君[Andor Chen]。
 
     环境设置
     --
